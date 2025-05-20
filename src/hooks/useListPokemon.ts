@@ -21,7 +21,10 @@ function useListPokemon(
           }))
         );
       })
-      .catch(() => {});
+      .catch(() => {
+        console.error('Failed to fetch list of pokemon');
+        setPokemonList([]);
+      });
   }, [page, limit]);
   return pokemonList;
 }

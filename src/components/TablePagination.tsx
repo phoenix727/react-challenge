@@ -25,7 +25,7 @@ const TablePagination = ({
     <Grid container>
       <Grid item xs={3} />
       <Grid item xs={6}>
-        <Grid container alignItems={'center'}>
+        <Grid container alignItems={'center'} justifyContent={'center'}>
           <Grid item>
             <IconButton onClick={() => onPageChange(0)} disabled={page === 0}>
               <FirstPage />

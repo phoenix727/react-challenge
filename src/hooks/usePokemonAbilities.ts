@@ -21,9 +21,14 @@ function usePokemonAbilities(pokemon: Pokemon | null): Ability[] | null {
           return pokemonClient.getAbilityById(abilityId);
         }
       })
-    ).then((abilityRes) => {
-      setAbilities(abilityRes);
-    });
+    )
+      .then((abilityRes) => {
+        setAbilities(abilityRes);
+      })
+      .catch(() => {
+        console.error('Failed to fetch pokemon abilities');
+        setAbilities(null);
+      });
   }, [pokemon]);
   return abilities;
 }
